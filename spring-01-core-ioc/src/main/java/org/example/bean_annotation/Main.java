@@ -15,6 +15,10 @@ public class Main {
         String st1 = container.getBean(String.class);
         System.out.println(st1);
 
+        PartTimeMentor partTimeMentor=container.getBean("p2",PartTimeMentor.class);
+        partTimeMentor.createAccount();
+
+
 
     }
 }
