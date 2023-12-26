@@ -12,8 +12,8 @@ public class Main {
 
         fullTimeMentor.createAccount();
 
-        String str = container.getBean(String.class);
-        System.out.println(str);
+        String st1 = container.getBean(String.class);
+        System.out.println(st1);
 
 
     }
