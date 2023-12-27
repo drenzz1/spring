@@ -1,7 +1,9 @@
 package org.group.repository;
 
 import org.group.entity.Comment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DBCommentRepository implements CommentRepository{
     @Override
     public void storeComment(Comment comment) {
