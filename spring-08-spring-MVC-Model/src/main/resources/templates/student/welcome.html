@@ -15,5 +15,49 @@
     <h5 th:text="${dreni2}"></h5>
     <h1 th:text="${Student.getFirstName()}"></h1>
     <h1 th:text="${Student.getLastName()}"></h1>
+
+    <table >
+        <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${Mentors.get(0).getFirstName()}">
+            </td>
+            <td th:text="${Mentors.get(0).getLastName()}">
+            </td>
+            <td th:text="${Mentors.get(0).getAge()}">
+            </td>
+            <td th:text="${Mentors.get(0).getGender()}">
+            </td>
+        </tr>
+        <tr>
+            <td th:text="${Mentors.get(1).getFirstName()}">
+            </td>
+            <td th:text="${Mentors.get(1).getLastName()}">
+            </td>
+            <td th:text="${Mentors.get(1).getAge()}">
+            </td>
+            <td th:text="${Mentors.get(1).getGender()}">
+            </td>
+        </tr>
+        <tr>
+            <td th:text="${Mentors.get(2).getFirstName()}">
+            </td>
+            <td th:text="${Mentors.get(2).getLastName()}">
+            </td>
+            <td th:text="${Mentors.get(2).getAge()}">
+            </td>
+            <td th:text="${Mentors.get(2).getGender()}">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
