@@ -1,6 +1,9 @@
 package org.foo.controller;
 
 
+import org.foo.enums.Gender;
+import org.foo.model.Mentor;
+import org.foo.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +31,16 @@ public class StudentController {
         model.addAttribute("student_id", dreni );
         model.addAttribute("dreni2" , dreni2);
 
+        Student student = new Student(1L,"Dreni ","Halili");
+        model.addAttribute("Student",student);
+
+        Mentor mentor1= new Mentor("Mike" ,"Smith ",45, Gender.MALE);
+        Mentor mentor2= new Mentor("Tom","Hanks ",65,Gender.MALE);
+        Mentor mentor3= new Mentor("Ammy","Bryan ",25,Gender.FEMALE);
+
+        List<Mentor> mentors = Arrays.asList(mentor1,mentor2,mentor3);
+
+        model.addAttribute("Mentors",mentors);
 
         return "student/welcome";
     }
