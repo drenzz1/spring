@@ -1,6 +1,7 @@
 package org.foo.controller;
 
 
+import org.foo.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,9 @@ public class StudentController {
         model.addAttribute("subject", subject);
         model.addAttribute("student_id", dreni );
         model.addAttribute("dreni2" , dreni2);
+
+        Student student = new Student(1L,"Dreni ","Halili");
+        model.addAttribute("Student",student);
 
 
         return "student/welcome";
