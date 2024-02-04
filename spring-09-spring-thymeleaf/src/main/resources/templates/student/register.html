@@ -9,7 +9,21 @@
 </head>
 <body>
 <h1> Welcome new Students </h1>
+<!--  Displaying value -->
 <h1 th:text="${Students.get(1)}"></h1>
+<h1 th:text="${Students.get(1).firstName}"> </h1>
+
+<!--  Concatenation -->
+<h1 th:text="${'Welcome the one and only ' + Students.get(1).firstName}"></h1>
+
+<!--  Link -->
+<a th:href="@{https://www.instagram.com/}">Instagram Page</a>
+<br>
+<a th:href="@{https://www.facebook.com/}">Facebook Page</a>
+<br>
+<a th:href="@{/student/welcome}">Welcome </a>
+
+
 
 
 </body>
