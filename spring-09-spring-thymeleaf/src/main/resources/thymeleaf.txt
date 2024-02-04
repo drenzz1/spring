@@ -1,0 +1,15 @@
+Per me perdor thymeleaf duhet me perdor thymeleafin si dependency ne pom xml
+
+Masi qe te boj import dependencyn e krijoj ni html file edhe te pjesa nalt
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+DOMETHAN QIT PJESEN (xmlns:th="http://www.thymeleaf.org")
+
+Nese du me paraqit tash ni model qe e kom marr prej metodes ne model e perdori tagun
+
+<h2 th:text="${emri i modeli qe e perdorum}"> </h2>
+
+Kur te perdorim thymeleafin pjesa mrena h2 nuk funksionon
+
+Nese dojna me bo concat
+
+<h2 th:text="${'Welcome' + student.get}"> </h2>
