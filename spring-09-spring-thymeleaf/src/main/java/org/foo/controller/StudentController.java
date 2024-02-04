@@ -12,9 +12,15 @@ import java.util.List;
 @RequestMapping("/student")
 public class StudentController {
 
-    @RequestMapping
+    @RequestMapping("/register")
     private String register(Model model){
         model.addAttribute("Students",DataGenerator.createStudent());
         return "student/register";
     }
+
+    @RequestMapping("/welcome")
+    private String info(){
+        return "student/welcome";
+    }
+
 }
