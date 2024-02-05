@@ -26,34 +26,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td th:text="${Mentors.get(0).getFirstName()}">
+        <tr th:each="mentors : ${Mentors} ">
+            <td th:text="${mentors.getFirstName()}">
             </td>
-            <td th:text="${Mentors.get(0).getLastName()}">
+            <td th:text="${mentors.getLastName()}">
             </td>
-            <td th:text="${Mentors.get(0).getAge()}">
+            <td th:text="${mentors.getAge()}">
             </td>
-            <td th:text="${Mentors.get(0).getGender()}">
-            </td>
-        </tr>
-        <tr>
-            <td th:text="${Mentors.get(1).getFirstName()}">
-            </td>
-            <td th:text="${Mentors.get(1).getLastName()}">
-            </td>
-            <td th:text="${Mentors.get(1).getAge()}">
-            </td>
-            <td th:text="${Mentors.get(1).getGender()}">
-            </td>
-        </tr>
-        <tr>
-            <td th:text="${Mentors.get(2).getFirstName()}">
-            </td>
-            <td th:text="${Mentors.get(2).getLastName()}">
-            </td>
-            <td th:text="${Mentors.get(2).getAge()}">
-            </td>
-            <td th:text="${Mentors.get(2).getGender()}">
+            <td th:text="${mentors.getGender()}">
             </td>
         </tr>
         </tbody>

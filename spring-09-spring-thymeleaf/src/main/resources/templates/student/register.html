@@ -22,9 +22,56 @@
 <a th:href="@{https://www.facebook.com/}">Facebook Page</a>
 <br>
 <a th:href="@{/student/welcome}">Welcome </a>
+<br>
+
+<!--Adding Parameters to Link -->
+
+<a th:href="@{/student/welcome(id=${Students.get(1)})}">Welcome based on id </a>
+
+<!-- Iteration -->
+
+<ul>
+    <li th:each="Student : ${Students} " th:text="${Student}"></li>
+</ul>
 
 
+<!-- Example with table
+<table >
+    <thead>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Age</td>
+        <td>Gender</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mentors : ${Mentors} ">
+        <td th:text="${mentors.getFirstName()}">
+        </td>
+        <td th:text="${mentors.getLastName()}">
+        </td>
+        <td th:text="${mentors.getAge()}">
+        </td>
+        <td th:text="${mentors.getGender()}">
+        </td>
+    </tr>
+    </tbody>
+</table>
 
+-->
+<!-- Fragments -->
+<div th:replace="~{fragments/index :: main-menu}"></div>
+<div th:replace="~{fragments/index :: footer-menu}"></div>
+
+<!--Conditional Logic  -->
+
+<div th:text="${Students.get(1).age > 25 ? 'ELIGIBLE' : 'NOT ELIGIBLE'}"></div>
+
+<div >
+    <span th:if="${Students.get(1).getState()=='Arizona'}">Arizona</span>
+    <span th:unless="${Students.get(1).getState()=='Arizona'}">Not Arizona </span>
+</div>
 
 </body>
 </html>
