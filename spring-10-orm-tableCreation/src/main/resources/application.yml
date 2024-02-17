@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb #kta duhet me shkru ne url bash qashtu qysh osht
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true #qikjo i tregon queries qe jena tu i perdor
+  h2:
+    console:
+      path: /h2-console #path kur te thirrum ne browser
+      enabled: true #me mujt me i pa ne browser
