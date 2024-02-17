@@ -1,13 +1,27 @@
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:testdb #kta duhet me shkru ne url bash qashtu qysh osht
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true #qikjo i tregon queries qe jena tu i perdor
+#  h2:
+#    console:
+#      path: /h2-console #path kur te thirrum ne browser
+#      enabled: true #me mujt me i pa ne browser
+
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb #kta duhet me shkru ne url bash qashtu qysh osht
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Password123.
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true #qikjo i tregon queries qe jena tu i perdor
-  h2:
-    console:
-      path: /h2-console #path kur te thirrum ne browser
-      enabled: true #me mujt me i pa ne browser
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+#  sql:  -- --- - - ---  qikjo osht kur ti vendosim kto scripts te resouse
+ #   init:
+  #    mode: always
