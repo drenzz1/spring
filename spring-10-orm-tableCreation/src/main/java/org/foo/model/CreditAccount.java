@@ -7,4 +7,12 @@ import java.math.BigDecimal;
 public class CreditAccount extends Account{
     BigDecimal creditLimit;
 
+    public CreditAccount() {
+
+    }
+
+    public CreditAccount(Long id, String owner, BigDecimal balance, BigDecimal interestRate, BigDecimal creditLimit) {
+        super(id, owner, balance, interestRate);
+        this.creditLimit = creditLimit;
+    }
 }
