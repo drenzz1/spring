@@ -22,10 +22,11 @@ public class Employee {
     private LocalDate hireDate;
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
-    @OneToOne
-    @JoinColumn(name = "department")
-    private Department department;
     private Integer  salary;
+    @OneToOne(cascade = CascadeType.ALL)
+//    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, Integer salary) {
         this.firstName = firstName;

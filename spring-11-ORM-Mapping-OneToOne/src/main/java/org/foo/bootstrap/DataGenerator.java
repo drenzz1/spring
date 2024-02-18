@@ -36,12 +36,20 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 =new Department("Phones","Electronics");
         Department d5 =new Department("Computers","Electronics");
 
+
+
+        e1.setDepartment(d1);
+        e2.setDepartment(d2);
+        e3.setDepartment(d3);
+        e4.setDepartment(d4);
+        e5.setDepartment(d5);
+
         employeeRepository.save(e1);
         employeeRepository.save(e2);
         employeeRepository.save(e3);
         employeeRepository.save(e4);
         employeeRepository.save(e5);
-        departmentRepository.saveAll( Arrays.asList(d1,d2,d3,d4,d5));
+
 
 
 
