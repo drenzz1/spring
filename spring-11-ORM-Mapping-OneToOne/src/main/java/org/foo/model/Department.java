@@ -16,6 +16,7 @@ public class Department {
     private Long id;
     private String department;
     private String division;
+
     @OneToOne(mappedBy = "department")
     private Employee employee;
 
