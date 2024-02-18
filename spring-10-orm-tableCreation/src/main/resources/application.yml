@@ -22,6 +22,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: create
-#  sql:  -- --- - - ---  qikjo osht kur ti vendosim kto scripts te resouse
- #   init:
-  #    mode: always
+  #  defer-datasource-initialization: true
+  #sql:
+   # init:
+   #  mode: always
