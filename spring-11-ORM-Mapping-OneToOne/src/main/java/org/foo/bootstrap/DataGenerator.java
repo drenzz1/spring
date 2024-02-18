@@ -3,6 +3,7 @@ package org.foo.bootstrap;
 import org.foo.enums.Gender;
 import org.foo.model.Department;
 import org.foo.model.Employee;
+import org.foo.model.Region;
 import org.foo.repository.DepartmentRepository;
 import org.foo.repository.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -36,6 +37,11 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 =new Department("Phones","Electronics");
         Department d5 =new Department("Computers","Electronics");
 
+        Region r1 = new Region("South Europe","Kosova");
+        Region r2 = new Region("West Europe","France");
+        Region r3 = new Region("East ","China");
+
+
 
 
         e1.setDepartment(d1);
@@ -44,15 +50,15 @@ public class DataGenerator implements CommandLineRunner {
         e4.setDepartment(d4);
         e5.setDepartment(d5);
 
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e5.setRegion(r3);
+
+
         employeeRepository.save(e1);
         employeeRepository.save(e2);
         employeeRepository.save(e3);
         employeeRepository.save(e4);
         employeeRepository.save(e5);
-
-
-
-
-
     }
 }
