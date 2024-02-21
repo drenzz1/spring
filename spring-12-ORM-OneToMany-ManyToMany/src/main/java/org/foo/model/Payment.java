@@ -21,10 +21,21 @@ public class Payment {
     private LocalDate createdDate;
 
     private BigDecimal amount;
-
+    @Enumerated(value = EnumType.STRING)
     private Status paymentStatus;
 
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @OneToOne(cascade = CascadeType.ALL) // nrastet kur te boj cascade all nuk kom nevoj me kriju repositorin e klases payment detials
     private PaymentDetail paymentDetail;
 
+    @ManyToOne
+    private Merchant merchant;
+    @ManyToOne
+    private Customer customer;
+
+    public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus) {
+        this.createdDate = createdDate;
+        this.amount = amount;
+        this.paymentStatus = paymentStatus;
+    }
 }
