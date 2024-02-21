@@ -1,5 +1,5 @@
 package org.foo.enums;
 
 public enum State {
-    ACTIVE,DRAFT
+    ACTIVE,DRAFT,SUSPENDED
 }

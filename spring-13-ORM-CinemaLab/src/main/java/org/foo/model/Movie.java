@@ -27,9 +27,10 @@ public class Movie {
     private Type type;
     @Enumerated(value = EnumType.STRING)
     private State state;
-    @Column(name = "release_date")
+    @Column(name = "release_date",columnDefinition = "DATE")
     private LocalDate localDate;
     private BigDecimal duration;
+    @Column(columnDefinition = "text")
     private String summary;
     @ManyToMany(mappedBy = "movies")
     private List<Genre> genres;
