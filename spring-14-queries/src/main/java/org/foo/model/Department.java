@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Department {
     @Id
-    @GeneratedValue(strategy  = GenerationType.AUTO)
     private String department;
     private String division;
 }

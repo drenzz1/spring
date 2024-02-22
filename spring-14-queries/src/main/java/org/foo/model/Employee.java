@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.foo.enums.Gender;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,12 +14,11 @@ import java.time.LocalDateTime;
 @Data
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
-    @Column(columnDefinition = "TIMESTAMP")
+    @Column(columnDefinition = "DATE")
     private LocalDateTime hireDate;
     @ManyToOne
     @JoinColumn(name = "department")
@@ -26,7 +26,7 @@ public class Employee {
     @Enumerated(value = EnumType.STRING)
     @Column(name = "gender")
     private Gender gender;
-    private Long salary;
+    private BigDecimal salary;
     @ManyToOne
     private Region region;
 
