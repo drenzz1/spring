@@ -1,8 +1,11 @@
 package org.foo.repository;
 
+import jakarta.transaction.Transactional;
 import org.foo.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.lang.model.util.SimpleElementVisitor6;
@@ -29,8 +32,20 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
     Integer getEmployeeSalary();
     @Query("Select e from Employee e where e.email = ?1")
     Employee getEmployeeDetail(String email);
-    @Query("select e from Employee e where e.email = ?1 and e.salary = ?2")
+    @Query("select e from Employee e  where e.email = ?1 and e.salary = ?2")
     Employee getEmployeeDetail(String email , int salary);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Employee e SET e.email = 'admin@email.com' WHERE e.id=:id")
+    void updateEmployeeJPQL(@Param("id") int id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE employees SET email = 'admin@email.com' WHERE id=:id",nativeQuery = true)
+    void updateEmployeeNativeQuery(@Param("id") int id);
+
+
 
 
 }
