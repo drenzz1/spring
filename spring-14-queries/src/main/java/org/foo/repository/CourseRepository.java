@@ -1,7 +1,11 @@
 package org.foo.repository;
 
+import jakarta.transaction.Transactional;
 import org.foo.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,8 +21,10 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     Long countByCategory(String category);
 
     List<Course>findByNameStartingWith(String name);
-
     Stream<Course>streamByCategory(String category);
+
+    @Query("select e from Course e where e.category = :category and e.rating>:rating")
+    List<Course>findAllByCategoryAndRatingGreaterThan(@Param("category") String category,@Param("rating") Byte rating);
 
 
 }

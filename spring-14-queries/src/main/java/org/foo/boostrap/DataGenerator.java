@@ -1,5 +1,6 @@
 package org.foo.boostrap;
 
+import jakarta.transaction.Transactional;
 import org.foo.repository.CourseRepository;
 import org.foo.repository.DepartmentRepository;
 import org.foo.repository.EmployeeRepository;
@@ -8,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class DataGenerator implements CommandLineRunner {
     private final CourseRepository courseRepository;
     private final DepartmentRepository departmentRepository;
@@ -22,6 +24,7 @@ public class DataGenerator implements CommandLineRunner {
     }
 
     @Override
+    @Transactional
     public void run(String... args) throws Exception {
         System.out.println("--------------Region Start--------------");
         System.out.println(regionRepository.findByCountry("Canada"));
@@ -40,6 +43,7 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println("--------------Employee Start--------------");
         System.out.println(employeeRepository.getEmployeeDetails());
         System.out.println(employeeRepository.getEmployeeSalary());
+        employeeRepository.updateEmployeeJPQL(3);
         System.out.println("--------------Employee End--------------");
         System.out.println("--------------Course Start--------------");
         courseRepository.findByCategory("Spring").forEach(System.out::println);
@@ -50,7 +54,7 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println(courseRepository.countByCategory("Spring"));
 
         courseRepository.findByNameStartingWith("Scalable").forEach(System.out::println);
-        courseRepository.streamByCategory("Spring").forEach(System.out::println);
+
         System.out.println("--------------Course End--------------");
 
 
