@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.foo</groupId>
-    <artifactId>spring-review-IoC</artifactId>
+    <artifactId>spring-review-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -24,7 +24,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
         </dependency>
-
     </dependencies>
 
 </project>
