@@ -10,5 +10,6 @@ public class Main {
         ApplicationContext container = new AnnotationConfigApplicationContext(AppConfig.class);
          var bean = container.getBean(SalaryService.class);
         System.out.println(bean.calculateRegularySalary());
+        System.out.println(bean.calculateOverTimeSalary());
     }
 }
