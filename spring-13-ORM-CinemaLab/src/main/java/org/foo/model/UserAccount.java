@@ -23,8 +23,9 @@ public class UserAccount {
     @OneToOne
     @JoinColumn(name = "account_details_id")
     private AccountDetails accountDetails;
-    @OneToMany(mappedBy = "userAccount")
+    @OneToMany(mappedBy = "userAccount", fetch = FetchType.EAGER)
     private List<Ticket> tickets;
+
 
     @Override
     public String toString() {
