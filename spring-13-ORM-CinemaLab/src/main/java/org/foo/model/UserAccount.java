@@ -2,14 +2,17 @@ package org.foo.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "user_account")
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class UserAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +23,18 @@ public class UserAccount {
     @OneToOne
     @JoinColumn(name = "account_details_id")
     private AccountDetails accountDetails;
-    @OneToMany(mappedBy = "userAccount")
+    @OneToMany(mappedBy = "userAccount", fetch = FetchType.EAGER)
     private List<Ticket> tickets;
+
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                ", tickets=" + tickets +
+                '}';
+    }
 }

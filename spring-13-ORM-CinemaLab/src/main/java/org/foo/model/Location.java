@@ -2,14 +2,17 @@ package org.foo.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.List;
 @Entity
 @Table(name = "location")
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +27,19 @@ public class Location {
     private String address;
     @OneToMany(mappedBy = "location")
     private List<Cinema> cinema;
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

@@ -2,13 +2,16 @@ package org.foo.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "cinema")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Cinema {
     @Id
@@ -21,4 +24,13 @@ public class Cinema {
     private Location location;
     @OneToMany(mappedBy = "cinema")
     private List<MovieCinema> movieCinema;
+
+    @Override
+    public String toString() {
+        return "Cinema{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sponsoredName='" + sponsoredName + '\'' +
+                '}';
+    }
 }
