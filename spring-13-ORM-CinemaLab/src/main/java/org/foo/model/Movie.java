@@ -3,7 +3,9 @@ package org.foo.model;
 import jakarta.persistence.*;
 import jdk.jfr.MemoryAddress;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.foo.enums.State;
 import org.foo.enums.Type;
 
@@ -14,7 +16,8 @@ import java.util.List;
 @Entity
 @Table(name = "movie")
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +37,18 @@ public class Movie {
     private String summary;
     @ManyToMany(mappedBy = "movies")
     private List<Genre> genres;
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", type=" + type +
+                ", state=" + state +
+                ", localDate=" + localDate +
+                ", duration=" + duration +
+                ", summary='" + summary + '\'' +
+                '}';
+    }
 }

@@ -2,14 +2,17 @@ package org.foo.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "user_account")
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class UserAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,4 +25,15 @@ public class UserAccount {
     private AccountDetails accountDetails;
     @OneToMany(mappedBy = "userAccount")
     private List<Ticket> tickets;
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                ", tickets=" + tickets +
+                '}';
+    }
 }

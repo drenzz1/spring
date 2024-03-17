@@ -1,13 +1,15 @@
 package org.foo.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import lombok.Setter;
+import org.foo.enums.Role;
 
 @Entity
 @Table(name = "account_details")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class AccountDetails {
     @Id
@@ -18,13 +20,26 @@ public class AccountDetails {
     private String country;
     private String city;
     private String state;
-    private String age;
+    private int age;
     private String postalCode;
+
+    @Override
+    public String toString() {
+        return "AccountDetails{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", age='" + age + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
     @Enumerated(value = EnumType.STRING)
-    private Role role;
+    private Role role ;
     @OneToOne(mappedBy = "accountDetails")
     private UserAccount userAccount;
-}
-enum Role{
-    ADMIN,USER
 }
