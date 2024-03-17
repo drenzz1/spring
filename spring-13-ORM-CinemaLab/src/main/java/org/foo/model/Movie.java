@@ -32,7 +32,7 @@ public class Movie {
     private State state;
     @Column(name = "release_date",columnDefinition = "DATE")
     private LocalDate localDate;
-    private BigDecimal duration;
+    private Integer duration;
     @Column(columnDefinition = "text")
     private String summary;
     @ManyToMany(mappedBy = "movies")
