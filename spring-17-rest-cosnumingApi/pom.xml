@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.foo</groupId>
-    <artifactId>spring-17-rest-cosnumingApi</artifactId>
+    <artifactId>spring-17-REST-ConsumingApis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-17-rest-cosnumingApi</name>
     <description>spring-17-rest-cosnumingApi</description>
