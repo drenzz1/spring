@@ -1,5 +1,6 @@
 package org.foo.client;
 
+import org.foo.dto.Example2;
 import org.foo.dto.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,5 +12,8 @@ public interface UserClient {
 
     @GetMapping("/users")
     List<User> getUsers();
+
+
+
 
 }
