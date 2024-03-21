@@ -40,7 +40,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<CourseDTO> getCoursesByCategory(String category) {
 
-        List<Course> list = courseRepository.findAllByCategory(category);
+        List<Course> list = courseRepository.findAllByCategoryIgnoreCase(category);
         return list.stream().map(obj -> mapperUtil.convert(obj, new CourseDTO())).collect(Collectors.toList());
     }
 
