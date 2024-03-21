@@ -1,6 +1,6 @@
 package org.foo.controller;
 
-import org.foo.model.Mentor;
+import org.foo.entity.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

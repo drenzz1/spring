@@ -1,6 +1,6 @@
 package org.foo.bootstrap;
 
-import org.foo.model.Car;
+import org.foo.entity.Car;
 import org.foo.repository.CarRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

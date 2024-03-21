@@ -1,9 +1,7 @@
 package org.foo.repository;
 
-import jakarta.transaction.Transactional;
-import org.foo.model.Course;
+import org.foo.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

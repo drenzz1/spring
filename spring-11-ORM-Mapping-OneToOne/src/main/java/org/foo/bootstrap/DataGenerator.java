@@ -1,17 +1,15 @@
 package org.foo.bootstrap;
 
 import org.foo.enums.Gender;
-import org.foo.model.Department;
-import org.foo.model.Employee;
-import org.foo.model.Region;
+import org.foo.entity.Department;
+import org.foo.entity.Employee;
+import org.foo.entity.Region;
 import org.foo.repository.DepartmentRepository;
 import org.foo.repository.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class DataGenerator implements CommandLineRunner {
