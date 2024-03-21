@@ -27,6 +27,7 @@ import javax.annotation.processing.Generated;
 public class User {
 
     @JsonProperty("id")
+    @JsonIgnore
     private Integer id;
     @JsonProperty("name")
     private String name;
