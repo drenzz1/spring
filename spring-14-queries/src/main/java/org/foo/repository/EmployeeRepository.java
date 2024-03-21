@@ -1,15 +1,13 @@
 package org.foo.repository;
 
 import jakarta.transaction.Transactional;
-import org.foo.model.Employee;
+import org.foo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import javax.lang.model.util.SimpleElementVisitor6;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 

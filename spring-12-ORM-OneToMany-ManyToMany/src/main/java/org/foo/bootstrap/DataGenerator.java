@@ -1,7 +1,7 @@
 package org.foo.bootstrap;
 
 import org.foo.enums.Status;
-import org.foo.model.*;
+import org.foo.entity.*;
 import org.foo.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package org.foo.repository;
 
-import org.foo.model.Merchant;
+import org.foo.entity.Merchant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

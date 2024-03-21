@@ -1,6 +1,6 @@
 package org.foo.bootstrap;
 
-import org.foo.model.Employee;
+import org.foo.entity.Employee;
 
 import java.util.ArrayList;
 import java.util.List;

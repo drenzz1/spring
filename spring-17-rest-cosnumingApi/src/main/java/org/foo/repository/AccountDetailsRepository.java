@@ -1,7 +1,7 @@
 package org.foo.repository;
 
+import org.foo.entity.AccountDetails;
 import org.foo.enums.Role;
-import org.foo.model.AccountDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

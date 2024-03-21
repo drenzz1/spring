@@ -2,8 +2,8 @@ package org.foo.controller;
 
 
 import org.foo.enums.Gender;
-import org.foo.model.Mentor;
-import org.foo.model.Student;
+import org.foo.entity.Mentor;
+import org.foo.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

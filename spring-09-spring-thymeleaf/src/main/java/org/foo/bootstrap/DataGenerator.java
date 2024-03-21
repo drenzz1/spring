@@ -1,9 +1,8 @@
 package org.foo.bootstrap;
 
 import com.github.javafaker.Faker;
-import org.foo.model.Student;
+import org.foo.entity.Student;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
